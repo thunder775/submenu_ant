@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import NavigationMenu from "./component/menu";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className={"app"}>
+            <NavigationMenu navigationMap={menuNavigationMap}/>
+        </div>
+    );
+}
+
+const menuNavigationMap = {
+    "Client": {
+        "Rollover/Consolidate super": null,
+        "Rebalance super": null,
+        "Salary sacrifice contribution": {
+            "Maximise": null,
+            "Fixed - regular": null,
+            "Custom - one off": {
+                "test": null
+            }
+        },
+        "Re - contribution": null,
+    },
+    "Partner": {
+        "SubMenu - 1": null,
+        "SubMenu - 2": null,
+        "SubMenu - 3": {
+            "Option - 1": null,
+            "Option - 2": null,
+            "Option - 3": null,
+        },
+    }
 }
 
 export default App;
